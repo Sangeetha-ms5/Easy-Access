@@ -1,10 +1,8 @@
 {
-  "description": "Easily discover and access personalized government schemes and public services in India with a user-friendly platform designed for citizens and departments.",
+  "title": "Easy Access Government Services",
+  "description": "Discover government schemes and services in one simple platform",
+  "language": "en",
   "robots": {
-    "index": false
-  },
-  "accessibility": {
-    "addBypassLinks": false,
-    "ignoreReducedMotion": false
+    "index": true
   }
 }

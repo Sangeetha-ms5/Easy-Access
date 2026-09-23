@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect, type KeyboardEvent } from 'react'
+import karLogo from './imports/kar_logo.png'
+import homeIllustration from './imports/image.png'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -205,9 +207,7 @@ const statusConfig = {
 function Logo({ onClick }: { onClick: () => void }) {
   return (
     <button onClick={onClick} className="flex items-center gap-2.5 group">
-      <div className="w-9 h-9 rounded-xl bg-green-600 flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-        <span className="text-white font-bold text-sm" style={{ fontFamily: 'Poppins' }}>EA</span>
-      </div>
+      <img src={karLogo} alt="Kar logo" className="h-10 w-10 rounded-xl object-cover shadow-sm" />
       <div className="flex flex-col leading-none">
         <span className="font-bold text-base text-green-700" style={{ fontFamily: 'Poppins' }}>Easy Access</span>
         <span className="text-xs text-slate-400 font-medium">Government Services</span>
@@ -233,37 +233,9 @@ function AshokChakra() {
 
 function IndiaMap() {
   return (
-    <svg viewBox="0 0 400 480" className="w-full h-full" style={{ filter: 'drop-shadow(0 8px 32px rgba(22,163,74,0.18))' }}>
-      <defs>
-        <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#22c55e" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="#16a34a" stopOpacity="0.7" />
-        </linearGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-          <feMerge><feMergeNode in="coloredBlur" /><feMergeNode in="SourceGraphic" /></feMerge>
-        </filter>
-      </defs>
-      <path d="M 195 28 L 220 35 L 250 30 L 268 42 L 278 60 L 282 80 L 275 95 L 288 108 L 298 125 L 302 145 L 295 162 L 310 178 L 318 198 L 312 218 L 322 238 L 315 258 L 300 272 L 290 292 L 278 308 L 268 328 L 252 348 L 238 366 L 220 382 L 205 400 L 195 418 L 188 432 L 182 418 L 175 402 L 162 385 L 148 368 L 132 350 L 118 332 L 105 312 L 98 292 L 88 272 L 82 252 L 78 232 L 85 212 L 78 192 L 72 172 L 78 152 L 85 132 L 95 115 L 108 100 L 118 85 L 122 65 L 135 50 L 152 38 L 172 30 Z"
-        fill="url(#mapGrad)" stroke="#15803d" strokeWidth="2" filter="url(#glow)" opacity="0.85" />
-      <path d="M 150 120 L 250 125" stroke="white" strokeWidth="0.8" opacity="0.4" />
-      <path d="M 130 180 L 280 185" stroke="white" strokeWidth="0.8" opacity="0.4" />
-      <path d="M 115 240 L 305 248" stroke="white" strokeWidth="0.8" opacity="0.4" />
-      <path d="M 105 300 L 295 308" stroke="white" strokeWidth="0.8" opacity="0.4" />
-      <path d="M 180 120 L 175 420" stroke="white" strokeWidth="0.8" opacity="0.3" />
-      <path d="M 220 118 L 218 390" stroke="white" strokeWidth="0.8" opacity="0.3" />
-      {[
-        [195, 155, 'Delhi'],[160, 280, 'Mumbai'],[245, 310, 'Kolkata'],
-        [215, 355, 'Hyderabad'],[195, 395, 'Chennai'],[168, 310, 'Pune'],
-        [148, 220, 'Jaipur'],[250, 200, 'Patna'],
-      ].map(([cx, cy, label]) => (
-        <g key={String(label)}>
-          <circle cx={Number(cx)} cy={Number(cy)} r="4" fill="white" opacity="0.9" />
-          <circle cx={Number(cx)} cy={Number(cy)} r="2" fill="#15803d" />
-          <text x={Number(cx)+7} y={Number(cy)+4} fontSize="8" fill="white" opacity="0.8" style={{ fontFamily: 'Inter' }}>{String(label)}</text>
-        </g>
-      ))}
-    </svg>
+    <div className="w-full h-full rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)] bg-white/70 p-2">
+      <img src={homeIllustration} alt="Government services illustration" className="w-full h-full object-contain rounded-2xl" />
+    </div>
   )
 }
 
